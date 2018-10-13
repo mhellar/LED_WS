@@ -19,14 +19,14 @@ Confetti flashes colours within a limited hue. It's been modified from Mark's or
 #endif
 
 // Fixed definitions cannot change on the fly.
-#define LED_DT 4                                             // Data pin to connect to the strip.
-#define LED_CK 3                                             // Clock pin for the strip.
-#define COLOR_ORDER GRB                                       // Are they RGB, GRB or what??
-#define LED_TYPE APA102                                      // Don't forget to change LEDS.addLeds
-#define NUM_LEDS 14                                           // Number of LED's.
+#define LED_DT 4                                            // Data pin to connect to the strip.
+//#define LED_CK 11                                             // Clock pin for the strip.
+#define COLOR_ORDER BGR                                       // Are they RGB, GRB or what??
+#define LED_TYPE WS2812                                       // Don't forget to change LEDS.addLeds
+#define NUM_LEDS 36                                           // Number of LED's.
 
 // Initialize changeable global variables.
-uint8_t max_bright = 64;                                      // Overall brightness definition. It can be changed on the fly.
+uint8_t max_bright = 128;                                      // Overall brightness definition. It can be changed on the fly.
 
 struct CRGB leds[NUM_LEDS];                                   // Initialize our LED array.
 
@@ -47,8 +47,8 @@ void setup() {
   delay(1000);                                                // Power-up safety delay or something like that.
   Serial.begin(57600);
 
-//  LEDS.addLeds<LED_TYPE, LED_DT, COLOR_ORDER>(leds, NUM_LEDS);    // Use this for WS2812B
-  LEDS.addLeds<LED_TYPE, LED_DT, LED_CK, COLOR_ORDER>(leds, NUM_LEDS);  // Use this for WS2801 or APA102
+  LEDS.addLeds<LED_TYPE, LED_DT, COLOR_ORDER>(leds, NUM_LEDS);    // Use this for WS2812B
+//  LEDS.addLeds<LED_TYPE, LED_DT, LED_CK, COLOR_ORDER>(leds, NUM_LEDS);  // Use this for WS2801 or APA102
 
   FastLED.setBrightness(max_bright);
   set_max_power_in_volts_and_milliamps(5, 500);               // FastLED power management set at 5V, 500mA.
@@ -61,7 +61,7 @@ void loop () {
   EVERY_N_MILLISECONDS(thisdelay) {                           // FastLED based non-blocking delay to update/display the sequence.
     confetti();
   }
-  show_at_max_brightness_for_power();  
+  FastLED.show();  
 } // loop()
 
 

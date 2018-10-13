@@ -18,10 +18,10 @@ Date: March, 2015
 
 // Fixed definitions cannot change on the fly.
 #define LED_DT 4                                             // Serial data pin for WS2812B or WS2801
-#define LED_CK 3
-#define COLOR_ORDER GBR                                      // Are they RGB, GRB or what??
+#define LED_CK 11
+#define COLOR_ORDER GRB                                       // Are they RGB, GRB or what??
 #define LED_TYPE WS2812                                       // What kind of strip are you using?
-#define NUM_LEDS  14                                         // Number of LED's
+#define NUM_LEDS  36                                           // Number of LED's
 
 // Initialize changeable global variables.
 uint8_t max_bright = 64;                                      // Overall brightness definition. It can be changed on the fly.
