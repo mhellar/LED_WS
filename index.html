@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> LED Workshop</title>
+    <title>LED Workshop</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -73,10 +73,107 @@
                 <img src="img/ebay.png">
             </section>
             <section>
-                <h4>These have a 5v, GND and DIN pin</h4>
-                <img src="img/ring_pins.jpeg" height="400">
-                <h4>Connect 5v to 5v, GND to GND and DIN to Pin6</h4>
+                <p>In addition to the LED you need something to control them. We are going to use a programmable
+                    microcontroller</p>
             </section>
+            <section>
+                <p>We will be using the:</p>
+                <a href="https://www.adafruit.com/product/3458?gclid=CjwKCAjwjIHeBRAnEiwAhYT2hxes-vArUNYfkUc-Y5e1HsgG2U4WaEAb27j7VbQfPhK4apJPBUTizhoCVhgQAvD_BwE">Adafruit
+                    Feather 328p</a>
+            </section>
+            <section>
+                <h3>Arduino is composed of two major parts:</h3>
+                <ul>
+                    <li>The Microcontroller board, which is the piece of hardware you program to control your projects.</li>
+                    <li>The Arduino IDE, the piece of software you run on your computer. You use the IDE to create a
+                        sketch(a program) that you upload to the Arduino board. The sketch tells the board what to do.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>SOME ARDUINO TERMS</h3>
+                <ul>
+                    <li>“sketch” – a program you write to run on an Arduino board</li>
+                    <li>“pin” – an input or output connected to something. e.g. output to an LED, input from a knob.</li>
+                </ul>
+            </section>
+            <section>
+                <h4>THE ARDUINO IDE</h4>
+                <img src="img/ardide.png" height="400"><br>
+                <ul>
+                    <li>Like a text editor</li>
+                    <li>View/write/edit sketches</li>
+                    <li>But then you program them into the micrcontroller</li>
+                </ul>
+            </section>
+            <section>
+                <h4>We need to set up the Arduino IDE with the board profile for the Feather 382p</h4>
+                <a href="https://learn.adafruit.com/add-boards-arduino-v164/setup">Instructions</a>
+            </section>
+            <section>
+                <p>Install the USB driver here</p>
+                <a href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">Here</a>
+            </section>
+            <section>
+                <h4>In the arduino preferences add this to the addtional boards manager</h4>
+                <h4>https://adafruit.github.io/arduino-board-index/package_adafruit_index.json</h4>
+            </section>
+            <section>
+                <h4>From tools -> Board -> Board Manager install the adafruit AVR boards</h4>
+                <img src="img/featherbm.png" height="200">
+            </section>
+            <section>
+                <h4>Now plug in the feather with a USB cable and select the feather 328p and port</h4>
+                <img src="img/featherselect.png" height="400">
+            </section>
+
+            <section>
+                <h4>Upload the blink program from the examples to test the board</h4>
+                <img src="img/blink.png" height="400">
+            </section>
+
+            <section>
+                <h4>Lets go over the basics of this program</h4>
+            </section>
+
+            <section>
+                <h4>Great, we will come back to this. Now we have to learn to solder!</h4>
+            </section>
+
+            <section>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/f95i88OSWB4" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+            </section>
+
+            <section>
+                <h4>Let's pactice soldering with some scraps!</h4>
+            </section>
+
+            <section>
+                <h4>The WS2812 have a 5v, GND and Data In (DIN) pin</h4>
+                <img src="img/ring_pins.jpeg" height="400">
+            </section>
+
+            <section>
+                <h4>This is how we will hook ours up</h4>
+                <img src="img/schematic.png" height="400">
+            </section>
+
+            <section>
+                <h4>Steps:</h4>
+                <ul>
+                    <li>Cut and strip wires</li>
+                    <li>Tin wires and led pads</li>
+                    <li>Solder everything together</li>
+                    <li>Test</li>
+                    <li>Assemble</li>
+                    <li>Program LED code</li>
+                </ul>
+            </section>
+
+            <section>
+                <img src="img/schematic.png" height="400">
+            </section>
+
             <section>
                 <p>Import the NeoPixel Library</p>
                 <img src="img/import_library.png">
@@ -86,12 +183,30 @@
                 <img src="img/neolib.png">
             </section>
             <section>
+                <p>Open Strandtest from the examples</p>
+            </section>
+            <section>
                 <p>Let's try some examples and write our own code!</p>
             </section>
             <section>
                 <p>FastLED</p>
                 <a href="http://fastled.io/">Fast LED Library</a>
             </section>
+            <section>
+                <p>Let's look at the examples</p>
+            </section>
+            <section>
+                <a href="https://github.com/Makuna/NeoPixelBus">Neopixel bus</a>
+            </section>
+            <section>
+                <a href="https://github.com/Makuna/NeoPixelBus">Neopixel bus</a>
+            </section>
+
+            <section>
+                <a href="https://learn.adafruit.com/adafruit-neopixel-uberguide/powering-neopixels">Powering Neopixels</a>
+            </section>
+
+
             <section>
                 <p>APA102</p>
                 <a href="https://cpldcpu.wordpress.com/2014/08/27/apa102/">APA102 aka “Superled”</a>
